@@ -20,9 +20,6 @@
 ### Dashboard
 <img src="screenshots/dashboard.png" alt="Dashboard with 3D DNA visualization, stats, and quick actions" width="100%" />
 
-### Research Chat with Streaming
-<img src="screenshots/chat.png" alt="Streaming chat with real-time token output and citations" width="100%" />
-
 ### Document Library
 <img src="screenshots/documents.png" alt="PDF upload with drag-drop and processing status" width="100%" />
 
