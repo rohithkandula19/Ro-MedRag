@@ -10,6 +10,13 @@
 [![PubMed](https://img.shields.io/badge/PubMed-36M+_Articles-326599?style=for-the-badge)](https://pubmed.ncbi.nlm.nih.gov/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 [![GCP](https://img.shields.io/badge/GCP-Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com)
+[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-romedrag.me-00d4ff?style=for-the-badge)](https://www.romedrag.me)
+
+<p align="center">
+  <strong>🔗 Live Demo:</strong> <a href="https://www.romedrag.me">www.romedrag.me</a> · 
+  <strong>📡 API Docs:</strong> <a href="https://healthcare-rag-backend-701918629622.us-central1.run.app/api/docs">Swagger UI</a> · 
+  <strong>🎥 Register → Upload PDF → Ask Questions</strong>
+</p>
 
 ---
 
@@ -181,8 +188,8 @@ Non-negotiable safety constraints built into the system:
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ro-medrag.git
-cd ro-medrag
+git clone https://github.com/rohithkandula19/Ro-MedRag.git
+cd Ro-MedRag
 
 cp backend/.env.example backend/.env
 # Edit backend/.env with your API keys
