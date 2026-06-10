@@ -36,6 +36,9 @@
 ### RAG Evaluation Dashboard
 <img src="screenshots/evaluation.png" alt="Automated RAG quality metrics — faithfulness, relevancy, precision, citation accuracy" width="100%" />
 
+### Evaluation Results
+<img src="screenshots/evaluation-results.png" alt="Per-query evaluation results — faithfulness, answer relevancy, context precision, and citation accuracy scores" width="100%" />
+
 </div>
 
 ---
