@@ -1,0 +1,7 @@
+
+# Secrets — never commit
+.env
+*.env
+backend/.env
+!.env.example
+!*.env.example
