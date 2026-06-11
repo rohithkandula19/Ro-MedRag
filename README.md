@@ -1,4 +1,4 @@
-# 🧬 RO MEDRAG — Healthcare Research Intelligence Platform
+# 🧬 RO MEDRAG · Healthcare Research Intelligence Platform
 
 > **Production-grade agentic RAG system** for AI-powered medical literature analysis with real-time streaming, PubMed integration, automated evaluation, and evidence-based citations.
 
@@ -34,10 +34,10 @@
 <img src="screenshots/pubmed.png" alt="PubMed search returning real medical articles with abstracts" width="100%" />
 
 ### RAG Evaluation Dashboard
-<img src="screenshots/evaluation.png" alt="Automated RAG quality metrics — faithfulness, relevancy, precision, citation accuracy" width="100%" />
+<img src="screenshots/evaluation.png" alt="Automated RAG quality metrics: faithfulness, relevancy, precision, citation accuracy" width="100%" />
 
 ### Evaluation Results
-<img src="screenshots/evaluation-results.png" alt="Per-query evaluation results — faithfulness, answer relevancy, context precision, and citation accuracy scores" width="100%" />
+<img src="screenshots/evaluation-results.png" alt="Per-query evaluation results: faithfulness, answer relevancy, context precision, and citation accuracy scores" width="100%" />
 
 </div>
 
@@ -45,14 +45,14 @@
 
 ## 🎯 What It Does
 
-RO MEDRAG is an **AI-powered research assistant** that lets medical researchers upload PDF papers, ask natural language questions, and receive evidence-based answers with source citations — all streamed in real-time.
+RO MEDRAG is an **AI-powered research assistant** that lets medical researchers upload PDF papers, ask natural language questions, and receive evidence-based answers with source citations, all streamed in real-time.
 
 Unlike basic RAG demos, this system features an **autonomous LangGraph agent** that:
-- **Routes queries intelligently** — decides whether to retrieve, summarize, compare, extract data, or ask for clarification
-- **Self-corrects** — validates its own answers against source material and regenerates if grounding fails
-- **Re-queries automatically** — reformulates search queries when initial retrieval is insufficient
-- **Searches live literature** — falls back to PubMed's 36M+ article database when local docs aren't enough
-- **Measures its own quality** — built-in RAGAS-style evaluation pipeline with automated metrics
+- **Routes queries intelligently**: decides whether to retrieve, summarize, compare, extract data, or ask for clarification
+- **Self-corrects**: validates its own answers against source material and regenerates if grounding fails
+- **Re-queries automatically**: reformulates search queries when initial retrieval is insufficient
+- **Searches live literature**: falls back to PubMed's 36M+ article database when local docs aren't enough
+- **Measures its own quality**: built-in RAGAS-style evaluation pipeline with automated metrics
 
 **Every answer is grounded in documents. Hallucination is structurally prevented.**
 
@@ -148,10 +148,10 @@ When uploaded documents don't have enough information, search PubMed's database 
 
 ### 4. RAG Evaluation Pipeline
 Automated quality metrics inspired by RAGAS:
-- **Faithfulness** — Is the answer grounded in retrieved context?
-- **Answer Relevancy** — Does it address the question?
-- **Context Precision** — Are retrieved chunks relevant?
-- **Citation Accuracy** — Do [N] references map to real chunks?
+- **Faithfulness**: Is the answer grounded in retrieved context?
+- **Answer Relevancy**: Does it address the question?
+- **Context Precision**: Are retrieved chunks relevant?
+- **Citation Accuracy**: Do [N] references map to real chunks?
 
 Run the full suite or test individual queries. Track pass rates over time.
 
@@ -186,7 +186,7 @@ Non-negotiable safety constraints built into the system:
 ### Prerequisites
 - Docker & Docker Compose
 - Anthropic API key ([get one](https://console.anthropic.com/))
-- OpenAI API key ([get one](https://platform.openai.com/api-keys)) — for embeddings only
+- OpenAI API key ([get one](https://platform.openai.com/api-keys)), for embeddings only
 
 ### 1. Clone and configure
 
@@ -280,66 +280,66 @@ Interactive docs: `http://localhost:8000/api/docs`
 ro-medrag/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py                    — FastAPI app, middleware, all route registration
+│   │   ├── main.py                    - FastAPI app, middleware, all route registration
 │   │   ├── core/
-│   │   │   ├── config.py              — Settings (pydantic-settings, env vars)
-│   │   │   ├── security.py            — JWT auth, bcrypt, dependencies
-│   │   │   └── logging.py             — Structured JSON logging
+│   │   │   ├── config.py              - Settings (pydantic-settings, env vars)
+│   │   │   ├── security.py            - JWT auth, bcrypt, dependencies
+│   │   │   └── logging.py             - Structured JSON logging
 │   │   ├── db/
-│   │   │   └── database.py            — Async SQLAlchemy engine + sessions
+│   │   │   └── database.py            - Async SQLAlchemy engine + sessions
 │   │   ├── models/
-│   │   │   ├── user.py                — User, Document, ChatSession ORM models
-│   │   │   ├── chat.py                — Message, Citation models
-│   │   │   └── document.py            — Document, DocumentChunk models
+│   │   │   ├── user.py                - User, Document, ChatSession ORM models
+│   │   │   ├── chat.py                - Message, Citation models
+│   │   │   └── document.py            - Document, DocumentChunk models
 │   │   ├── api/routes/
-│   │   │   ├── auth.py                — Register, login, me
-│   │   │   ├── documents.py           — Upload, list, delete
-│   │   │   ├── chat.py                — Sessions, messages, query
-│   │   │   ├── streaming.py           — SSE streaming endpoint
-│   │   │   ├── pubmed.py              — PubMed search API
-│   │   │   ├── eval.py                — RAG evaluation endpoints
-│   │   │   ├── viewer.py              — PDF serving for citation viewer
-│   │   │   ├── admin.py               — Admin statistics
-│   │   │   └── health.py              — Health checks
+│   │   │   ├── auth.py                - Register, login, me
+│   │   │   ├── documents.py           - Upload, list, delete
+│   │   │   ├── chat.py                - Sessions, messages, query
+│   │   │   ├── streaming.py           - SSE streaming endpoint
+│   │   │   ├── pubmed.py              - PubMed search API
+│   │   │   ├── eval.py                - RAG evaluation endpoints
+│   │   │   ├── viewer.py              - PDF serving for citation viewer
+│   │   │   ├── admin.py               - Admin statistics
+│   │   │   └── health.py              - Health checks
 │   │   └── services/
-│   │       ├── rag_pipeline.py        — Core RAG: parse → chunk → embed → retrieve → generate
-│   │       ├── agent/                 — ★ LangGraph Agent System
-│   │       │   ├── state.py           — AgentState dataclass (shared graph state)
-│   │       │   ├── tools.py           — 6 agent tools (retrieval, reformulation, comparison, 
+│   │       ├── rag_pipeline.py        - Core RAG: parse → chunk → embed → retrieve → generate
+│   │       ├── agent/                 - ★ LangGraph Agent System
+│   │       │   ├── state.py           - AgentState dataclass (shared graph state)
+│   │       │   ├── tools.py           - 6 agent tools (retrieval, reformulation, comparison, 
 │   │       │   │                        extraction, sufficiency evaluation, answer validation)
-│   │       │   ├── nodes.py           — 8 graph nodes (route, retrieve, evaluate, reformulate,
+│   │       │   ├── nodes.py           - 8 graph nodes (route, retrieve, evaluate, reformulate,
 │   │       │   │                        compare, generate, validate, finalize)
-│   │       │   └── graph.py           — MedRAGAgent orchestrator with conditional loops
-│   │       ├── pubmed_service.py      — PubMed E-utilities integration
-│   │       ├── eval_service.py        — RAGAS-style evaluation metrics
-│   │       ├── chat_service.py        — Session & query orchestration
-│   │       ├── document_service.py    — Upload & async ingestion
-│   │       └── user_service.py        — Auth CRUD
+│   │       │   └── graph.py           - MedRAGAgent orchestrator with conditional loops
+│   │       ├── pubmed_service.py      - PubMed E-utilities integration
+│   │       ├── eval_service.py        - RAGAS-style evaluation metrics
+│   │       ├── chat_service.py        - Session & query orchestration
+│   │       ├── document_service.py    - Upload & async ingestion
+│   │       └── user_service.py        - Auth CRUD
 │   ├── requirements.txt
 │   ├── Dockerfile
 │   └── .env.example
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx                    — Route definitions (6 pages)
+│   │   ├── App.jsx                    - Route definitions (6 pages)
 │   │   ├── components/
-│   │   │   ├── ui/Layout.jsx          — Collapsible icon sidebar, theme toggle
-│   │   │   ├── auth/LoginPage.jsx     — Login/register with 3D background
-│   │   │   ├── dashboard/Dashboard.jsx — Stats, quick actions, 3D hero
-│   │   │   ├── chat/ChatPage.jsx      — ★ Streaming chat with SSE, citation cards, PDF viewer
-│   │   │   ├── documents/DocumentsPage.jsx — Drag-drop upload, status tracking
-│   │   │   ├── evaluation/EvaluationPage.jsx — ★ RAG metrics dashboard
-│   │   │   ├── pubmed/PubMedPage.jsx  — ★ PubMed article search
-│   │   │   └── 3d/Scene3D.jsx         — Three.js DNA helix + particles
+│   │   │   ├── ui/Layout.jsx          - Collapsible icon sidebar, theme toggle
+│   │   │   ├── auth/LoginPage.jsx     - Login/register with 3D background
+│   │   │   ├── dashboard/Dashboard.jsx - Stats, quick actions, 3D hero
+│   │   │   ├── chat/ChatPage.jsx      - ★ Streaming chat with SSE, citation cards, PDF viewer
+│   │   │   ├── documents/DocumentsPage.jsx - Drag-drop upload, status tracking
+│   │   │   ├── evaluation/EvaluationPage.jsx - ★ RAG metrics dashboard
+│   │   │   ├── pubmed/PubMedPage.jsx  - ★ PubMed article search
+│   │   │   └── 3d/Scene3D.jsx         - Three.js DNA helix + particles
 │   │   ├── store/
-│   │   │   ├── authStore.js           — Zustand auth state
-│   │   │   └── themeStore.js          — Dark/light theme persistence
-│   │   ├── services/api.js            — Axios client with JWT interceptors
-│   │   └── styles/globals.css         — Design system (Audiowide + Urbanist)
+│   │   │   ├── authStore.js           - Zustand auth state
+│   │   │   └── themeStore.js          - Dark/light theme persistence
+│   │   ├── services/api.js            - Axios client with JWT interceptors
+│   │   └── styles/globals.css         - Design system (Audiowide + Urbanist)
 │   ├── index.html
 │   ├── vite.config.js
 │   └── package.json
 ├── scripts/
-│   └── deploy_gcp.sh                  — Full GCP deployment (Cloud Run + Cloud SQL)
+│   └── deploy_gcp.sh                  - Full GCP deployment (Cloud Run + Cloud SQL)
 ├── docker-compose.yml
 └── README.md
 ```
@@ -442,4 +442,4 @@ For research and educational purposes only. Always consult qualified healthcare 
 
 ## 📄 License
 
-MIT — For research and educational purposes.
+MIT. For research and educational purposes.
